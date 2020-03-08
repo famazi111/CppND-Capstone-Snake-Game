@@ -7,6 +7,7 @@
 #include <vector>
 
 class ObstacleRenderer : public Renderer {
+
 public:
   ObstacleRenderer(const std::size_t screen_width,
                    const std::size_t screen_height,

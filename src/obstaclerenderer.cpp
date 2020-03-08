@@ -9,19 +9,19 @@ void ObstacleRenderer::Render(Snake const snake, SDL_Point const &food) {
   SDL_RenderClear(sdl_renderer);
 
   // Render Obstacle 1
-  SDL_SetRenderDrawColor(sdl_renderer, 0, 255, 0, 0);
+  SDL_SetRenderDrawColor(sdl_renderer, 255, 0, 0, 0);
   SDL_RenderFillRect(sdl_renderer, &obstacle1);
 
   // Render Obstacle 2
-  SDL_SetRenderDrawColor(sdl_renderer, 0, 255, 0, 0);
+  SDL_SetRenderDrawColor(sdl_renderer, 255, 0, 0, 0);
   SDL_RenderFillRect(sdl_renderer, &obstacle2);
 
   // Render Obstacle 3
-  SDL_SetRenderDrawColor(sdl_renderer, 0, 255, 0, 0);
+  SDL_SetRenderDrawColor(sdl_renderer, 255, 0, 0, 0);
   SDL_RenderFillRect(sdl_renderer, &obstacle3);
 
   // Render Obstacle 4
-  SDL_SetRenderDrawColor(sdl_renderer, 0, 255, 0, 0);
+  SDL_SetRenderDrawColor(sdl_renderer, 255, 0, 0, 0);
   SDL_RenderFillRect(sdl_renderer, &obstacle4);
   // Render food
   RenderFood(food);

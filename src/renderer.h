@@ -1,23 +1,38 @@
 #ifndef RENDERER_H
 #define RENDERER_H
 
-#include <vector>
 #include "SDL.h"
 #include "snake.h"
+#include <vector>
 
 class Renderer {
- public:
+public:
+  Renderer();
   Renderer(const std::size_t screen_width, const std::size_t screen_height,
            const std::size_t grid_width, const std::size_t grid_height);
   ~Renderer();
 
-  void Render(Snake const snake, SDL_Point const &food);
   void UpdateWindowTitle(int score, int fps);
+  virtual void Render(Snake const, SDL_Point const &){};
+  virtual bool collision(Snake){};
+  virtual bool ObstacleCell(int, int){};
 
- private:
+  SDL_Rect obstacle1;
+  SDL_Rect obstacle2;
+  SDL_Rect obstacle3;
+  SDL_Rect obstacle4;
+
+  SDL_Rect block;
+
+protected:
+  void RenderHead(Snake const);
+  void RenderBody(Snake const);
+  void RenderFood(SDL_Point const &);
+
   SDL_Window *sdl_window;
   SDL_Renderer *sdl_renderer;
 
+  int factor;
   const std::size_t screen_width;
   const std::size_t screen_height;
   const std::size_t grid_width;
